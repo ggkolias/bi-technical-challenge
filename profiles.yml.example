@@ -1,0 +1,15 @@
+# dbt profile for BI Challenge - PostgreSQL
+# Set password via: export PGPASSWORD=yourpassword
+
+bi_challenge:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: POSTGRES_USERNAME  #TODO: replace with your username
+      password: ''
+      port: 5432
+      dbname: fln
+      schema: bi_challenge
+      threads: 4

@@ -1,0 +1,26 @@
+# BI Technical Challenge - dbt project
+# Uses PostgreSQL; load CSVs first with: dbt seed
+
+name: 'bi_challenge'
+version: '1.0.0'
+config-version: 2
+
+profile: 'bi_challenge'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["data"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  bi_challenge:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

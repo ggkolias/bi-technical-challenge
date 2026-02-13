@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: fct_acv
+    description: Average Contract Value summary
+
+  - name: fct_customers
+    description: Paying customers (companies with closed-won deals)
+
+  - name: fct_deal_velocity
+    description: Deal velocity by deal type
+
+  - name: fct_user_retention
+    description: User retention by join month

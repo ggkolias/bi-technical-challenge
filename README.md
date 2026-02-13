@@ -8,6 +8,10 @@ Please read the full challenge instructions here:
 
 **[BI Technical Challenge — Instructions](https://www.notion.so/flinncomply/BI-Technical-Challenge-3036cc4a522d8010bd49f7ce8039ef34?source=copy_link)**
 
+## My Solution
+
+See **[SOLUTION.md](SOLUTION.md)** for my approach, assumptions, answers, and setup instructions.
+
 ## Data Files
 
 The `data/` folder contains four CSV files:

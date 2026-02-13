@@ -1,0 +1,64 @@
+version: 2
+
+models:
+  - name: stg_backend_events
+    description: Backend product usage events
+    columns:
+      - name: event_id
+        description: Unique event identifier
+        tests:
+          - unique
+          - not_null
+      - name: event_name
+        tests:
+          - not_null
+      - name: event_timestamp
+        tests:
+          - not_null
+      - name: user_id
+        tests:
+          - not_null
+      - name: organization_id
+        tests:
+          - not_null
+
+  - name: stg_hubspot_deals
+    description: HubSpot deal records
+    columns:
+      - name: deal_id
+        tests:
+          - unique
+          - not_null
+      - name: hubspot_company_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_hubspot_companies')
+              field: company_id
+
+  - name: stg_hubspot_companies
+    description: HubSpot company records
+    columns:
+      - name: company_id
+        tests:
+          - unique
+          - not_null
+      - name: company_name
+        tests:
+          - not_null
+
+  - name: stg_hubspot_contacts
+    description: HubSpot contact records
+    columns:
+      - name: contact_id
+        tests:
+          - unique
+          - not_null
+      - name: email
+        tests:
+          - not_null
+      - name: hubspot_company_id
+        tests:
+          - relationships:
+              to: ref('stg_hubspot_companies')
+              field: company_id
